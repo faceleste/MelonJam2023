@@ -1,18 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject optionsCanvas;
+
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            AbrirOpcoes();
+        }
+
     }
+
+    public void IniciarJogo()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
+
+
+    public void AbrirOpcoes()
+    {
+        bool canOpen = !(GameObject.FindGameObjectsWithTag("Option").Length > 0);
+
+        if (canOpen)
+        {
+            optionsCanvas.SetActive(true); 
+        }
+    }
+
+    public void FecharOpcoes()
+    {
+        optionsCanvas.SetActive(false);
+    }
+
+    public void Sair()
+    {
+        Debug.Log("Saindo...");
+        Application.Quit();
+    }
+
+
+
+
 }
