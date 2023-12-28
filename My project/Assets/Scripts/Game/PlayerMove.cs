@@ -16,6 +16,9 @@ public class PlayerMove : MonoBehaviour
 
     public float timeToEspirrar = 8;
     private float cooldownEspirro;
+    public bool canWalk = true;
+    public bool canStop = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +31,24 @@ public class PlayerMove : MonoBehaviour
     {
         isPlayerInvisible = Physics2D.OverlapCircle(this.transform.position, rangeObj, objLayer);
         
-        
+        if(isPlayerInvisible)
+        {
+            sr.flipX = false;
+            anim.SetBool("isWalking", false);
+            anim.SetBool("isEscondido", true);
+            if(canStop)
+            {
+                 StartCoroutine(WaitStoped());
+            }
+           
+            
+        }
+        else
+        {
+            canStop = true;
+            anim.SetBool("isEscondido", false);
+            
+        }
     }
 
     void FixedUpdate()
@@ -58,6 +78,23 @@ public class PlayerMove : MonoBehaviour
                 cooldownEspirro = timeToEspirrar;
             }
         }
-        rb.velocity = movement.normalized * speed;
+        if(canWalk == true)
+        {
+            rb.velocity = movement.normalized * speed;
+        }
+        else
+        {
+            rb.velocity = new Vector2(0, 0);
+        }
+        
+    }
+
+    IEnumerator WaitStoped()
+    {
+        canStop = false;
+        canWalk = false;
+        rb.velocity = new Vector2(0, 0);
+        yield return new WaitForSeconds(1f);
+        canWalk = true;
     }
 }
