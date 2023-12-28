@@ -11,16 +11,19 @@ public class Cam : MonoBehaviour
     public Vector3 positionAl;
     public float SmoothFactor;
     public Vector3 minValues, maxValues; 
+    public Camera camera;
     
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform; // find the obj "Player"
+        //player = GameObject.FindGameObjectWithTag("Player").transform; // find the obj "Player"
+        camera.aspect = 1.5f;
     }
     void FixedUpdate()
     {
         positionAl = player.transform.position; // turn the player position to positionAI   
         Follow(); 
+        
     }
 
     void Follow() // follow the positionAI
