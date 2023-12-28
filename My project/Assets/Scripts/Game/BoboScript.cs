@@ -26,6 +26,8 @@ public class BoboScript : MonoBehaviour
     public Sprite charmosoNormal;
     public Sprite charmosoAssustado;
     public Cam camera;
+    public GameObject itensFurto;
+    public DialogManager dialogo;
 
     // Start is called before the first frame update
     void Start()
@@ -77,6 +79,9 @@ public class BoboScript : MonoBehaviour
                 if(cooldownTakeItem <= 0)
                 {
                     // PEGA ITEM
+                    dialogo.falaPlayer = "Peguei xo vazar vazar!!";
+                    dialogo.VerificaMsg();
+                    itensFurto.SetActive(false);
                 }
             }
             else
