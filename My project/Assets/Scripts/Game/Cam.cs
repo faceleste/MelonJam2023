@@ -6,6 +6,7 @@ public class Cam : MonoBehaviour
 {
     private Animator animCam; // for future animations
     public Transform player;
+    public Transform playerAgain;
     public Vector3 offset;
     [Range(0, 10)]
     public Vector3 positionAl;

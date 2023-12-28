@@ -17,6 +17,16 @@ public class BoboScript : MonoBehaviour
     public float cooldownTakeItem;
     [SerializeField] BarraCircular barraCircular;
     public GameObject barras;
+
+    public SpriteRenderer srBobo;
+    public Sprite boboNormal;
+    public Sprite boboAssustado;
+
+    public SpriteRenderer srCharmoso;
+    public Sprite charmosoNormal;
+    public Sprite charmosoAssustado;
+    public Cam camera;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,16 +39,28 @@ public class BoboScript : MonoBehaviour
     {
         isPlayerVisible = Physics2D.OverlapCircle(this.transform.position, rangeObj, playerLayer);
         cooldownView -= Time.deltaTime;
-        if(cooldownView <= 0)
+        if(cooldownView <= 1.5f && cooldownView > 0)
         {
-            if(player.isPlayerInvisible != true)
+            camera.SmoothFactor = 4;
+            camera.player = this.transform;
+            if(cooldownView <= 1f)
             {
-                //GAMEOVER
+                srBobo.sprite = boboAssustado;
+                srCharmoso.sprite = charmosoAssustado;
             }
-            else
-            {
-                cooldownView = timeToView; 
-            }
+        }
+        else if(cooldownView <= 0 && cooldownView > -1)
+        {
+            camera.player = camera.playerAgain;
+        }
+        if(cooldownView <= -2.5f)
+        {
+            srBobo.sprite = boboNormal;
+            srCharmoso.sprite = charmosoNormal;
+            cooldownView = timeToView; 
+            camera.SmoothFactor = 2;
+            Debug.Log("Perdeu bobo");
+            //GAMEOVER
         }
     }
 
