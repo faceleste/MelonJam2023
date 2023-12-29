@@ -101,7 +101,7 @@ public class DialogController : MonoBehaviour
                 victimDialogText.text = currentText;
             }
 
-            yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(0.04f);
         }
     }
 
@@ -123,5 +123,15 @@ public class DialogController : MonoBehaviour
     public bool IsLastSentence()
     {
         return sentenceIndex + 1 == currentScene.sentences.Count;
+    }
+
+    public int GetNextSentencesWords()
+    {
+        int qtdWords = 0;
+        for (int i = sentenceIndex + 1; i < currentScene.sentences.Count; i++)
+        {
+            qtdWords += currentScene.sentences[i].text.Split(' ').Length;
+        }
+        return qtdWords;
     }
 }

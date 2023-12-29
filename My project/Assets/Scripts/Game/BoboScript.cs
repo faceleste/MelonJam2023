@@ -10,6 +10,7 @@ public class BoboScript : MonoBehaviour
     public PlayerMove player;
 
     public LayerMask playerLayer;
+    public bool isViewPlayer = false;
     public bool isPlayerVisible;
     public float rangeObj;
 
@@ -34,6 +35,8 @@ public class BoboScript : MonoBehaviour
     public bool seeMedium;
     public float rangeSeeMedium;
     public bool seeNext;
+    
+    public GameObject simboloExclamacao;
     public float rangeSeeNext;
 
     // Start is called before the first frame update
@@ -46,65 +49,67 @@ public class BoboScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(seeMedium == false)
+        if (seeMedium == false)
         {
             seeLong = Physics2D.OverlapCircle(this.transform.position, rangeSeeLong, playerLayer);
         }
-        if(seeNext == false)
+        if (seeNext == false)
         {
-             seeMedium = Physics2D.OverlapCircle(this.transform.position, rangeSeeMedium, playerLayer);
+            seeMedium = Physics2D.OverlapCircle(this.transform.position, rangeSeeMedium, playerLayer);
         }
-        seeNext= Physics2D.OverlapCircle(this.transform.position, rangeSeeNext, playerLayer);
+        seeNext = Physics2D.OverlapCircle(this.transform.position, rangeSeeNext, playerLayer);
 
         isPlayerVisible = Physics2D.OverlapCircle(this.transform.position, rangeObj, playerLayer);
         cooldownView -= Time.deltaTime;
 
-        if(seeLong == true)
+        if (seeLong == true)
         {
-            if(cooldownView <= 1.5f && cooldownView > 0)
+            if (cooldownView <= 1.5f && cooldownView > 0)
             {
                 camera.SmoothFactor = 4;
                 camera.player = this.transform;
-                if(cooldownView <= 1f)
+                if (cooldownView <= 1f)
                 {
                     srBobo.sprite = boboAssustado;
                     srCharmoso.sprite = charmosoAssustado;
                 }
             }
-            else if(cooldownView <= 0 && cooldownView > -1)
+            else if (cooldownView <= 0 && cooldownView > -1)
             {
                 camera.player = camera.playerAgain;
             }
-            if(cooldownView <= -2.5f)
+            if (cooldownView <= -2.5f)
             {
+                simboloExclamacao.SetActive(false);
                 srBobo.sprite = boboNormal;
                 srCharmoso.sprite = charmosoNormal;
-                cooldownView = timeToView; 
+                cooldownView = timeToView;
                 camera.SmoothFactor = 2;
                 Debug.Log("Perdeu bobo");
+                isViewPlayer = true;
                 //GAMEOVER
             }
         }
         else
         {
-            cooldownView = timeToView; 
+            cooldownView = timeToView;
         }
-        
+
     }
 
     void FixedUpdate()
     {
-        if(isPlayerVisible)
+        if (isPlayerVisible)
         {
             barras.SetActive(true);
-            if(Input.GetButton("Fire3"))
+            if (Input.GetButton("Fire3"))
             {
-                if(player.canWin == false)
+                if (player.canWin == false)
                 {
                     cooldownTakeItem -= Time.deltaTime;
                     barraCircular.AtualizarBarra(cooldownTakeItem);
 
-                    if(cooldownTakeItem <= 0)
+                    if (cooldownTakeItem <= 0)
                     {
                         // PEGA ITEM
                         player.canWin = true;
@@ -121,7 +126,7 @@ public class BoboScript : MonoBehaviour
             }
             else
             {
-                if(cooldownTakeItem <= timeTakeItem)
+                if (cooldownTakeItem <= timeTakeItem)
                 {
                     cooldownTakeItem += Time.deltaTime;
                     barraCircular.AtualizarBarra(cooldownTakeItem);
@@ -134,7 +139,7 @@ public class BoboScript : MonoBehaviour
             cooldownTakeItem = timeTakeItem;
             barraCircular.AtualizarBarra(cooldownTakeItem);
         }
-        
+
     }
 
 
