@@ -56,19 +56,23 @@ public class PlayerMove : MonoBehaviour
     {
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         Vector2 movement = new Vector2(moveHorizontal, 0);
-        if(moveHorizontal > 0)
+        if(canWalk == true)
         {
-            sr.flipX = true;
+            if(moveHorizontal > 0)
+            {
+                sr.flipX = true;
+            }
+            if(moveHorizontal < 0)
+            {
+                sr.flipX = false;
+            }
+            if(moveHorizontal != 0)
+            {
+                anim.SetBool("isWalking", true);
+                cooldownEspirro = timeToEspirrar;
+            }
         }
-        if(moveHorizontal < 0)
-        {
-            sr.flipX = false;
-        }
-        if(moveHorizontal != 0)
-        {
-            anim.SetBool("isWalking", true);
-            cooldownEspirro = timeToEspirrar;
-        }
+        
         else
         {
             anim.SetBool("isWalking", false);

@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: 1 Correct
   m_EditorClassIdentifier: 
   sentences:
+  - text: Ok...?
+    speaker: {fileID: 0}
+  - text: Lol, you look like a lizard.
+    speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
   - text: '?'
-    speaker: {fileID: 0}
+    speaker: {fileID: 11400000, guid: 0240f07bec913a34d85160d755f31b5a, type: 2}
   - text: You're a bad person.
-    speaker: {fileID: 0}
+    speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
   - text: ...
     speaker: {fileID: 11400000, guid: 0240f07bec913a34d85160d755f31b5a, type: 2}
   - text: '... '
