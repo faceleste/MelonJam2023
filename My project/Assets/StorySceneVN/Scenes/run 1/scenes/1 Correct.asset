@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e21460d747d7b3c45b636b0ea21bdfc5, type: 3}
+  m_Name: 1 Correct
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: '?'
+    speaker: {fileID: 0}
+  - text: You're a bad person.
+    speaker: {fileID: 0}
+  - text: ...
+    speaker: {fileID: 11400000, guid: 0240f07bec913a34d85160d755f31b5a, type: 2}
+  - text: '... '
+    speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
+  - text: So, what do you do for a living?
+    speaker: {fileID: 11400000, guid: 0240f07bec913a34d85160d755f31b5a, type: 2}
+  - text: I work with art, and you?
+    speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
+  nextScene: {fileID: 11400000, guid: 8eaba75b1b0db8547b8875195bb83ca9, type: 2}
