@@ -7,11 +7,16 @@ using UnityEngine;
 public class ChooseScene : GameScene
 {
     public List<ChooseLabel> labels;
-    
+
     [System.Serializable]
     public struct ChooseLabel
     {
         public string text;
         public StoryScene nextScene;
+
+        public string labelType;
+
+
     }
+
 }

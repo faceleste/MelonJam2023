@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0b7cfa00bf69c74cb62fb7c2d9c446c, type: 3}
   m_Name: Saul Goodman
   m_EditorClassIdentifier: 
-  speakerName: Robber
-  colorSpeaker: {r: 0, g: 0, b: 0, a: 0}
+  speakerName: Paul
+  colorSpeaker: {r: 0.96981126, g: 0.261666, b: 0.261666, a: 1}

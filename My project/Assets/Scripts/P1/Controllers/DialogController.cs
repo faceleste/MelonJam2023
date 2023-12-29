@@ -30,10 +30,6 @@ public class DialogController : MonoBehaviour
     }
 
 
-    public void PlayChoose(ChooseScene scene)
-    {
-
-    }
     public void PlayNextSentence()
     {
 
@@ -41,7 +37,7 @@ public class DialogController : MonoBehaviour
         if (sentenceIndex < currentScene.sentences.Count - 1)
         {
             sentenceIndex++;
-            if (currentScene.sentences[sentenceIndex].speaker.speakerName == "Robber")
+            if (currentScene.sentences[sentenceIndex].speaker.speakerName == "Paul")
             {
                 robberNameText.text = currentScene.sentences[sentenceIndex].speaker.speakerName;
                 StartCoroutine(TypeText(currentScene.sentences[sentenceIndex].text, 0));
@@ -55,6 +51,7 @@ public class DialogController : MonoBehaviour
         else
         {
             sentenceIndex = 0;
+
             currentScene = (StoryScene)currentScene.nextScene;
             PlayScene(currentScene);
         }
@@ -69,6 +66,7 @@ public class DialogController : MonoBehaviour
 
     {
 
+
         currentScene = scene;
         sentenceIndex = -1;
         PlayNextSentence();
@@ -77,11 +75,12 @@ public class DialogController : MonoBehaviour
 
     private IEnumerator TypeText(string text, int robberOrVictim)
     {
+        string currentText = "";
+
         if (robberOrVictim == 0)
         {
             robberDialogText.text = "";
             robberNameText.text = "";
-
         }
         else
         {
@@ -91,35 +90,25 @@ public class DialogController : MonoBehaviour
 
         foreach (char letter in text.ToCharArray())
         {
+            currentText += letter;
+
             if (robberOrVictim == 0)
             {
-                robberDialogText.text += letter;
+                robberDialogText.text = currentText;
             }
             else
             {
-                victimDialogText.text += letter;
+                victimDialogText.text = currentText;
             }
-            yield return new WaitForSeconds(0.05f);
-        }
 
-    }
-
-
-
-    public void Hide()
-    {
-        if (!isHidden)
-        {
-            animator.SetTrigger("Hide");
-            isHidden = true;
+            yield return new WaitForSeconds(0.03f);
         }
     }
 
-    public void Show()
-    {
-        animator.SetTrigger("Show");
-        isHidden = false;
-    }
+
+
+
+
 
     public void ClearText()
     {

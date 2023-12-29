@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0b7cfa00bf69c74cb62fb7c2d9c446c, type: 3}
   m_Name: Victim
   m_EditorClassIdentifier: 
-  speakerName: 
-  colorSpeaker: {r: 0, g: 0, b: 0, a: 0}
+  speakerName: Victim
+  colorSpeaker: {r: 0.5264151, g: 0.59278613, b: 1, a: 1}

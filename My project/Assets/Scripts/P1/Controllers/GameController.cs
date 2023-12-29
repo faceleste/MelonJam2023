@@ -55,6 +55,7 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         if (scene is StoryScene)
         {
+            chooseController.DestroyLabels(); 
             StoryScene storyScene = scene as StoryScene;
             yield return new WaitForSeconds(1f);
             dialog.ClearText();

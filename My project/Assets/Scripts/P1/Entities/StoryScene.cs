@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewStoryScene", menuName ="Data/New Story Scene")]
+[CreateAssetMenu(fileName = "NewStoryScene", menuName = "Data/New Story Scene")]
 [System.Serializable]
 public class StoryScene : GameScene
 {
@@ -14,6 +14,12 @@ public class StoryScene : GameScene
     {
         public string text;
         public Speaker speaker;
+
+        public Sentence(string text, Speaker speaker)
+        {
+            this.text = text;
+            this.speaker = speaker;
+        }
     }
 }
 
