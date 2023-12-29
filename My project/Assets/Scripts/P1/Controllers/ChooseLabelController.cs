@@ -2,11 +2,12 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
-
+using UnityEngine.UI;
 public class ChooseLabelController : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public Color defaultColor;
     public Color hoverColor;
+    public Desconfiometro desconfiometro;
     private StoryScene scene;
     private TextMeshProUGUI textMesh;
     private ChooseController controller;
@@ -14,7 +15,8 @@ public class ChooseLabelController : MonoBehaviour, IPointerClickHandler, IPoint
 
     void Awake()
     {
- 
+
+
         textMesh = GetComponent<TextMeshProUGUI>();
         textMesh.color = defaultColor;
     }
@@ -45,13 +47,19 @@ public class ChooseLabelController : MonoBehaviour, IPointerClickHandler, IPoint
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        Slider slider = GameObject.Find("Slider").GetComponent<Slider>();
+
+
         if (label.labelType == "good")
         {
+            slider.value -= 15;
+            Debug.Log(desconfiometro.desconfiometro);
             Debug.Log("Teste");
         }
 
         if (label.labelType == "neutral")
         {
+            slider.value += 10;
             List<string> neutralSentences = new List<string>();
             neutralSentences.Add("I don't know what to say.");
             neutralSentences.Add("...");
@@ -65,6 +73,12 @@ public class ChooseLabelController : MonoBehaviour, IPointerClickHandler, IPoint
         }
         if (label.labelType == "bad")
         {
+
+            if (isGameOver(slider.value))
+            {
+                slider.value = 100;
+            }
+            slider.value += 55;
             List<string> badSentences = new List<string>();
             badSentences.Add("Go screw yourself.");
             badSentences.Add("You're a bad person.");
@@ -80,10 +94,18 @@ public class ChooseLabelController : MonoBehaviour, IPointerClickHandler, IPoint
             scene.sentences.Insert(0, new StoryScene.Sentence(randomQuote, new Speaker("Victim", Color.black)));
             Debug.Log("Teste2");
         }
-         
+
         controller.PerformChoose(scene);
     }
 
+
+    public bool isGameOver(float value)
+    {
+  
+            return ((int)100 - value) == (int)value;
+
+   
+    }
     public void OnPointerEnter(PointerEventData eventData)
     {
         textMesh.color = hoverColor;

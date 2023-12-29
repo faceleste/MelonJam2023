@@ -12,7 +12,7 @@ public class BoboScript : MonoBehaviour
     public LayerMask playerLayer;
     public bool isPlayerVisible;
     public float rangeObj;
-
+    public bool isViewPlayer = false;
     public float timeTakeItem = 3;
     public float cooldownTakeItem;
     [SerializeField] BarraCircular barraCircular;
@@ -25,6 +25,8 @@ public class BoboScript : MonoBehaviour
     public SpriteRenderer srCharmoso;
     public Sprite charmosoNormal;
     public Sprite charmosoAssustado;
+
+    public GameObject simboloExclamacao;
     public Cam camera;
     public GameObject itensFurto;
     public DialogManager dialogo;
@@ -41,42 +43,55 @@ public class BoboScript : MonoBehaviour
     {
         isPlayerVisible = Physics2D.OverlapCircle(this.transform.position, rangeObj, playerLayer);
         cooldownView -= Time.deltaTime;
-        if(cooldownView <= 1.5f && cooldownView > 0)
+        if (cooldownView <= 3.5f)
+        {
+       
+            simboloExclamacao.SetActive(true);
+
+
+
+        }
+        if (cooldownView <= 1.5f && cooldownView > 0)
         {
             camera.SmoothFactor = 4;
             camera.player = this.transform;
-            if(cooldownView <= 1f)
+            if (cooldownView <= 1f)
             {
                 srBobo.sprite = boboAssustado;
                 srCharmoso.sprite = charmosoAssustado;
             }
         }
-        else if(cooldownView <= 0 && cooldownView > -1)
+        else if (cooldownView <= 0 && cooldownView > -1)
         {
             camera.player = camera.playerAgain;
         }
-        if(cooldownView <= -2.5f)
+
+
+
+        if (cooldownView <= -2.5f)
         {
+            simboloExclamacao.SetActive(false);
             srBobo.sprite = boboNormal;
             srCharmoso.sprite = charmosoNormal;
-            cooldownView = timeToView; 
+            cooldownView = timeToView;
             camera.SmoothFactor = 2;
             Debug.Log("Perdeu bobo");
+            isViewPlayer = true;
             //GAMEOVER
         }
     }
 
     void FixedUpdate()
     {
-        if(isPlayerVisible)
+        if (isPlayerVisible)
         {
             barras.SetActive(true);
-            if(Input.GetButton("Fire3"))
+            if (Input.GetButton("Fire3"))
             {
                 cooldownTakeItem -= Time.deltaTime;
                 barraCircular.AtualizarBarra(cooldownTakeItem);
 
-                if(cooldownTakeItem <= 0)
+                if (cooldownTakeItem <= 0)
                 {
                     // PEGA ITEM
                     dialogo.falaPlayer = "Peguei xo vazar vazar!!";
@@ -86,7 +101,7 @@ public class BoboScript : MonoBehaviour
             }
             else
             {
-                if(cooldownTakeItem <= timeTakeItem)
+                if (cooldownTakeItem <= timeTakeItem)
                 {
                     cooldownTakeItem += Time.deltaTime;
                     barraCircular.AtualizarBarra(cooldownTakeItem);
@@ -99,6 +114,6 @@ public class BoboScript : MonoBehaviour
             cooldownTakeItem = timeTakeItem;
             barraCircular.AtualizarBarra(cooldownTakeItem);
         }
-        
+
     }
 }

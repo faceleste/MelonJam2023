@@ -150,3 +150,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 0.8792453, g: 0.17087215, b: 0.17087215, a: 1}
+  desconfiometro: {fileID: 2920213166656060446, guid: f0ca0e6a7af836a458bde4d387b61034, type: 3}
