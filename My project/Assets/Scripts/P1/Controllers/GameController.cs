@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
     public ChooseController chooseController;
 
     private State state = State.IDLE;
+    float tempoDecorrido = 0f;
+    float intervalo = 0f; 
 
     private enum State
     {
@@ -26,8 +28,15 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+  
+        tempoDecorrido += Time.deltaTime;
+
+      
+        if (tempoDecorrido >= intervalo)
         {
+
+            tempoDecorrido = 0f;
+            
             if (state == State.IDLE && dialog.IsCompleted())
             {
                 if (dialog.IsLastSentence())
@@ -36,6 +45,9 @@ public class GameController : MonoBehaviour
                 }
                 else
                 {
+                    int qtdWords = dialog.GetNextSentencesWords();
+                    intervalo = qtdWords * 0.048f;
+                    Debug.Log("Quantidade de palavras: " + qtdWords + " Intervalo: " + intervalo);
                     dialog.PlayNextSentence();
                 }
             }
@@ -55,11 +67,11 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         if (scene is StoryScene)
         {
-            chooseController.DestroyLabels(); 
+            chooseController.DestroyLabels();
             StoryScene storyScene = scene as StoryScene;
             yield return new WaitForSeconds(1f);
             dialog.ClearText();
-       
+
             yield return new WaitForSeconds(1f);
             dialog.PlayScene(storyScene);
             state = State.IDLE;

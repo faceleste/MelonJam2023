@@ -5,17 +5,19 @@ using UnityEngine;
 public class Desconfiometro : MonoBehaviour
 {
 
-    public float desconfiometro = 95;
+    public float desconfiometro = 35;
     // Start is called before the first frame update
     void Start()
     {
-        //setar valor do value do slider como desconfiometro
+      
         GetComponent<UnityEngine.UI.Slider>().value = desconfiometro;
     }
 
     // Update is called once per frame
     void Update()
     {
-        desconfiometro = GetComponent<UnityEngine.UI.Slider>().value;
+          GetComponent<UnityEngine.UI.Slider>().value = desconfiometro;
     }
+
+
 }
