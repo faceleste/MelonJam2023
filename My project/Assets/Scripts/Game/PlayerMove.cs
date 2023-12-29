@@ -19,6 +19,7 @@ public class PlayerMove : MonoBehaviour
     public bool canWalk = true;
     public bool canStop = true;
 
+    public bool canWin = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -97,4 +98,17 @@ public class PlayerMove : MonoBehaviour
         yield return new WaitForSeconds(1f);
         canWalk = true;
     }
+
+    void OnTriggerEnter2D(Collision2D collision) 
+    { 
+        if (collision.gameObject.CompareTag("Porta")) 
+        { 
+            if(canWin == true)
+            {
+                 // VENCEU
+            }
+          
+        } 
+    } 
+
 }

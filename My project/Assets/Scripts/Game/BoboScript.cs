@@ -99,15 +99,24 @@ public class BoboScript : MonoBehaviour
             barras.SetActive(true);
             if(Input.GetButton("Fire3"))
             {
-                cooldownTakeItem -= Time.deltaTime;
-                barraCircular.AtualizarBarra(cooldownTakeItem);
-
-                if(cooldownTakeItem <= 0)
+                if(player.canWin == false)
                 {
-                    // PEGA ITEM
-                    dialogo.falaPlayer = "Peguei xo vazar vazar!!";
+                    cooldownTakeItem -= Time.deltaTime;
+                    barraCircular.AtualizarBarra(cooldownTakeItem);
+
+                    if(cooldownTakeItem <= 0)
+                    {
+                        // PEGA ITEM
+                        player.canWin = true;
+                        dialogo.falaPlayer = "Peguei xo vazar vazar!!";
+                        dialogo.VerificaMsg();
+                        itensFurto.SetActive(false);
+                    }
+                }
+                else
+                {
+                    dialogo.falaPlayer = "Eu já peguei isso, o que eu to fazendo aqui?";
                     dialogo.VerificaMsg();
-                    itensFurto.SetActive(false);
                 }
             }
             else
