@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 1
   m_EditorClassIdentifier: 
   labels:
-  - text: "Quero fazer a noite de algu\xE9m t\xE3o boa quanto a minha (: "
-    nextScene: {fileID: 11400000, guid: 36540bc703b09c64799be11705bebd02, type: 2}
-    labelType: bad
-  - text: "Desde que me conhe\xE7o como ser humano eu sou um amante de Whiskey"
-    nextScene: {fileID: 11400000, guid: 36540bc703b09c64799be11705bebd02, type: 2}
+  - text: 'What are you doing up at this hour? '
+    nextScene: {fileID: 11400000, guid: 89ab1b1bbf1f6b646a77a1f7a165ffcc, type: 2}
     labelType: good
-  - text: 'Porque eu quero. '
-    nextScene: {fileID: 11400000, guid: 36540bc703b09c64799be11705bebd02, type: 2}
+  - text: Are you new around here?
+    nextScene: {fileID: 11400000, guid: 89ab1b1bbf1f6b646a77a1f7a165ffcc, type: 2}
     labelType: neutral
+  - text: Where do you live?
+    nextScene: {fileID: 11400000, guid: 89ab1b1bbf1f6b646a77a1f7a165ffcc, type: 2}
+    labelType: bad
