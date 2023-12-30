@@ -31,22 +31,6 @@ MonoBehaviour:
   - text: ' Exactly.'
     speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
     type: 
-  - text: ... uh....   It's like the story of the fox...
-    speaker: {fileID: 11400000, guid: 0240f07bec913a34d85160d755f31b5a, type: 2}
-    type: 
-  - text: What story is that?
-    speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
-    type: 
-  - text: ' It''s a fable about a fox who is hungry and sees a clown. The clown is
-      wearing a bright red suit and a big, silly hat. ...'
-    speaker: {fileID: 11400000, guid: 0240f07bec913a34d85160d755f31b5a, type: 2}
-    type: 
-  - text: The fox thinks that the clown must be a delicious meal.
-    speaker: {fileID: 11400000, guid: 0240f07bec913a34d85160d755f31b5a, type: 2}
-    type: 
-  - text: 'WHAT? HAHAHAHAHA ....... '
-    speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
-    type: 
   - text: '... Anyway, I got interested in you: what do you draw?'
     speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
     type: 

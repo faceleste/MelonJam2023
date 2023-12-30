@@ -25,7 +25,7 @@ public class MenuManager : MonoBehaviour
 
     public void IniciarJogo()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Tutorial");
     }
 
 
@@ -42,6 +42,11 @@ public class MenuManager : MonoBehaviour
     public void FecharOpcoes()
     {
         optionsCanvas.SetActive(false);
+    }
+
+    public void IniciarGameplay()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
     }
 
     public void Sair()

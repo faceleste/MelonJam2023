@@ -36,6 +36,20 @@ public class GameOverSceneScript : MonoBehaviour
         StartCoroutine(WaitToStartGame()); 
     }
 
+
+    public void IniciarTutorial(){
+        StartCoroutine(WaitToStartTutorial());
+    }
+
+
+
+    IEnumerator WaitToStartTutorial()
+    {
+        canEnd = false;
+        anim.SetTrigger("isFechando");
+        yield return new WaitForSeconds(1.1f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Tutorial");
+    }
     IEnumerator WaitToStartGame()
     {
         canEnd = false;

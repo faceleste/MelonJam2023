@@ -1231,7 +1231,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1370649884}
         m_TargetAssemblyTypeName: GameOverSceneScript, Assembly-CSharp
-        m_MethodName: IniciarJogo
+        m_MethodName: IniciarTutorial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

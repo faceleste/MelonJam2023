@@ -28,7 +28,7 @@ MonoBehaviour:
   - text: ...  Yeah. Life is difficult after all.
     speaker: {fileID: 11400000, guid: 0240f07bec913a34d85160d755f31b5a, type: 2}
     type: 
-  - text: It really is. Most  e.  I was wondering...do you have any family?
+  - text: ' I was wondering...do you have any family?'
     speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
     type: 
   nextScene: {fileID: 11400000, guid: 84a9cd75be1de4a459d0d45385885ef8, type: 2}

@@ -17,7 +17,8 @@ public class DialogController : MonoBehaviour
     private State state = State.IDLE;
     private Animator animator;
     private bool isHidden = false;
-
+    public AudioClip[] audioClips;
+    private AudioSource audioSource;
     private enum State
     {
         PLAYING, COMPLETED, IDLE
@@ -76,6 +77,23 @@ public class DialogController : MonoBehaviour
     }
 
 
+    public void PlayAudioRandom()
+    {
+
+        audioSource = GetComponent<AudioSource>();
+
+        // Verificar se o AudioSource está tocando
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = audioClips[UnityEngine.Random.Range(0, audioClips.Length)];
+            audioSource.Play();
+        }
+        // Se já estiver tocando, você pode lidar com isso de acordo com seus requisitos
+        else
+        {
+            Debug.Log("O áudio já está sendo reproduzido.");
+        }
+    }
     private IEnumerator TypeText(string text, int robberOrVictim)
     {
 
@@ -94,6 +112,7 @@ public class DialogController : MonoBehaviour
 
         foreach (char letter in text.ToCharArray())
         {
+            PlayAudioRandom();
             //se for a primeira letra, deixar maiuscula 
 
             state = State.PLAYING;
@@ -108,7 +127,7 @@ public class DialogController : MonoBehaviour
                 victimDialogText.text = currentText;
             }
 
-            yield return new WaitForSeconds(0.06f);
+            yield return new WaitForSeconds(0.04f);
         }
         yield return new WaitForSeconds(0.5f);
         state = State.COMPLETED;
