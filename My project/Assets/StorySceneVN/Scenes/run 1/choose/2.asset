@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 2
   m_EditorClassIdentifier: 
   labels:
-  - text: Eu engano trouxas.
-    nextScene: {fileID: 11400000, guid: b47f8105b4d84304baf655b78316242d, type: 2}
-    labelType: bad
-  - text: "Eu fa\xE7o investimentos e sou dono de uma f\xE1brica de ar condicionados"
-    nextScene: {fileID: 11400000, guid: b47f8105b4d84304baf655b78316242d, type: 2}
-    labelType: neutral
-  - text: Eu trabalho na Faceleste como pixelartista.
-    nextScene: {fileID: 11400000, guid: b47f8105b4d84304baf655b78316242d, type: 2}
+  - text: 'I''m an artist, I stopped by this bar to get ideas between drinks. '
+    nextScene: {fileID: 11400000, guid: dc65691d55a41384fa91ad5c84673f8f, type: 2}
     labelType: good
+  - text: I'm a investor.
+    nextScene: {fileID: 11400000, guid: dc65691d55a41384fa91ad5c84673f8f, type: 2}
+    labelType: bad
+  - text: 'I''m a security guard, I stopped by this bar before my shift. '
+    nextScene: {fileID: 11400000, guid: dc65691d55a41384fa91ad5c84673f8f, type: 2}
+    labelType: neutral

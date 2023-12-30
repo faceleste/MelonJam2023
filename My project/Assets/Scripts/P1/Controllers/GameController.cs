@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
 
     private State state = State.IDLE;
     float tempoDecorrido = 0f;
-    float intervalo = 0f; 
+    float intervalo = 0f;
 
     private enum State
     {
@@ -28,15 +28,15 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-  
+
         tempoDecorrido += Time.deltaTime;
 
-      
+
         if (tempoDecorrido >= intervalo)
         {
 
             tempoDecorrido = 0f;
-            
+
             if (state == State.IDLE && dialog.IsCompleted())
             {
                 if (dialog.IsLastSentence())
@@ -80,6 +80,16 @@ public class GameController : MonoBehaviour
         {
             state = State.CHOOSE;
             chooseController.SetupChoose(scene as ChooseScene);
+        }
+
+       
+        if (scene is StoryScene)
+        {
+            StoryScene storySceneInstance = scene as StoryScene;  
+            if (storySceneInstance.sentences[0].type == "created")
+            {
+                storySceneInstance.sentences.RemoveAt(0);
+            }
         }
     }
 }

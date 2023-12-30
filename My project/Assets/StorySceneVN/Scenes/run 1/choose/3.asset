@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 3
   m_EditorClassIdentifier: 
   labels:
-  - text: "Voc\xEA desenha... furry?"
+  - text: Furry....
     nextScene: {fileID: 11400000, guid: 12869cd453168ff4eada75b1b29a1d37, type: 2}
-    labelType: neutral
-  - text: "Ent\xE3o estamos falando a mesma lingua... rs"
+    labelType: good
+  - text: I like to draw people around me, my life.
     nextScene: {fileID: 11400000, guid: 12869cd453168ff4eada75b1b29a1d37, type: 2}
     labelType: bad
-  - text: "Deixe eu adivinhar: Voc\xEA desenha garotas de anime "
+  - text: I draw anime girls.
     nextScene: {fileID: 11400000, guid: 12869cd453168ff4eada75b1b29a1d37, type: 2}
     labelType: good

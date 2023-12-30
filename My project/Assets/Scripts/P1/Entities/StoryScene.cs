@@ -15,10 +15,14 @@ public class StoryScene : GameScene
         public string text;
         public Speaker speaker;
 
-        public Sentence(string text, Speaker speaker)
+        public string type ; 
+
+        public Sentence(string text, Speaker speaker, string type )
         {
             this.text = text;
             this.speaker = speaker;
+            this.type = type;
+            
         }
     }
 }
