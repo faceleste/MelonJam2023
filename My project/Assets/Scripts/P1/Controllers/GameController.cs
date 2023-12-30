@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour
                 else
                 {
                     int qtdWords = dialog.GetNextSentencesWords();
-                    intervalo = qtdWords * 0.048f;
+                    intervalo = qtdWords * 0.061f;
                     Debug.Log("Quantidade de palavras: " + qtdWords + " Intervalo: " + intervalo);
                     dialog.PlayNextSentence();
                 }
@@ -69,10 +69,10 @@ public class GameController : MonoBehaviour
         {
             chooseController.DestroyLabels();
             StoryScene storyScene = scene as StoryScene;
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
             dialog.ClearText();
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
             dialog.PlayScene(storyScene);
             state = State.IDLE;
         }

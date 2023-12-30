@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 1
   m_EditorClassIdentifier: 
   sentences:
-  - text: Are you crazy, dude?
+  - text: I'm a member of the AAAAA; Authentic and Ambitious Assalariated Artists
+      Association. We
     speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
     type: 
-  - text: I'm a member of the AAAAA; Authentic and Ambitious Assalariated Artists
-      Association. We paint for the art, not for the money. Money destroys all ambition
-      and turns it into desire
+  - text: ' paint for the art, not for the money. Money destroys all ambition and
+      turns it into desire'
     speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
     type: 
   - text: What do you do for a living?

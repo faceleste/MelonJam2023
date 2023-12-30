@@ -101,7 +101,7 @@ public class DialogController : MonoBehaviour
                 victimDialogText.text = currentText;
             }
 
-            yield return new WaitForSeconds(0.04f);
+            yield return new WaitForSeconds(0.06f);
         }
     }
 
