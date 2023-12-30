@@ -80,12 +80,11 @@ public class ChooseLabelController : MonoBehaviour, IPointerClickHandler, IPoint
             slider.value += 55;
             List<string> badSentences = new List<string>();
             badSentences.Add("Go screw yourself.");
-            badSentences.Add("You're a bad person.");
-            badSentences.Add("Are you crazy, dude?");
+            badSentences.Add("Are you out of your mind? Why would you say that?");
+            badSentences.Add("Get the fuck out of here...");
             badSentences.Add("Is that something you say?");
-            badSentences.Add("You're a bad person.");
-            badSentences.Add("Lol, you look like a lizard.");
-            badSentences.Add("Fuck u Man");
+            badSentences.Add("Talking with you is just meaningless.");
+            badSentences.Add("I wish I had spent my night doing something else");
 
             int randomNumber = Random.Range(1, badSentences.Count);
 
