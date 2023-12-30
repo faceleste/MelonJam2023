@@ -13,17 +13,15 @@ MonoBehaviour:
   m_Name: 2
   m_EditorClassIdentifier: 
   sentences:
-  - text: ' Life is tedious for those who do not have their own goals, it seems to
-      me.'
+  - text: You're an artist too? Hahaha! I work with the arts as well! Nice to meet
+      you.
     speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
     type: 
-  - text: You seem to have innovative ideas, but I don't know if your concepts are
-      popular.
+  - text: ... Uh-huh, I... I really enjoy drawing...
     speaker: {fileID: 11400000, guid: 0240f07bec913a34d85160d755f31b5a, type: 2}
     type: 
-  - text: ' And what could the population know? Do the mainstream media only promote
-      disinformation and discourage fine arts? The people are alienated, and their
-      eyes have been blinded by concrete.'
+  - text: Well, it's a shame that with each passing day, art seems to become more
+      and more robotic...
     speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
     type: 
   - text: '"Money destroys all ambition and turns it into desire," I once heard a
@@ -31,30 +29,25 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 0240f07bec913a34d85160d755f31b5a, type: 2}
     type: 
   - text: ' Exactly.'
-    speaker: {fileID: 11400000, guid: 0240f07bec913a34d85160d755f31b5a, type: 2}
-    type: 
-  - text: ' People are attracted by what seems most interesting to them.'
-    speaker: {fileID: 11400000, guid: 0240f07bec913a34d85160d755f31b5a, type: 2}
-    type: 
-  - text: That's an optimistic way of looking at things.
     speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
     type: 
-  - text: ' I understand. It''s like the story of the fox who curses the clown.'
+  - text: ... uh....   It's like the story of the fox...
     speaker: {fileID: 11400000, guid: 0240f07bec913a34d85160d755f31b5a, type: 2}
     type: 
   - text: What story is that?
     speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
     type: 
   - text: ' It''s a fable about a fox who is hungry and sees a clown. The clown is
-      wearing a bright red suit and a big, silly hat. The fox thinks that the clown
-      must be a delicious meal.'
+      wearing a bright red suit and a big, silly hat. ...'
+    speaker: {fileID: 11400000, guid: 0240f07bec913a34d85160d755f31b5a, type: 2}
+    type: 
+  - text: The fox thinks that the clown must be a delicious meal.
+    speaker: {fileID: 11400000, guid: 0240f07bec913a34d85160d755f31b5a, type: 2}
+    type: 
+  - text: 'WHAT? HAHAHAHAHA ....... '
     speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
     type: 
-  - text: I share similar ideas to yours, and I believe in a better government. There
-      are corrupt people, and not every man in a suit is a good man.
-    speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
-    type: 
-  - text: 'Anyway, I got interested in you: what do you draw?'
+  - text: '... Anyway, I got interested in you: what do you draw?'
     speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
     type: 
   nextScene: {fileID: 11400000, guid: 12f7f587784fc3c4c9aa806b2ced19f3, type: 2}

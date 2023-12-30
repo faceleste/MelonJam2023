@@ -14,13 +14,13 @@ public class DialogController : MonoBehaviour
 
     private int sentenceIndex = 0;
     public StoryScene currentScene;
-    private State state = State.COMPLETED;
+    private State state = State.IDLE;
     private Animator animator;
     private bool isHidden = false;
 
     private enum State
     {
-        PLAYING, COMPLETED
+        PLAYING, COMPLETED, IDLE
     }
     // Start is called before the first frame update
 
@@ -33,7 +33,6 @@ public class DialogController : MonoBehaviour
     public void PlayNextSentence()
     {
 
-        //ficar trocando os dialogos entre os personagens; tanto o robber quanto a vitima
         if (sentenceIndex < currentScene.sentences.Count - 1)
         {
             sentenceIndex++;
@@ -67,6 +66,10 @@ public class DialogController : MonoBehaviour
     {
 
 
+        if (scene == null)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+        }
         currentScene = scene;
         sentenceIndex = -1;
         PlayNextSentence();
@@ -75,6 +78,7 @@ public class DialogController : MonoBehaviour
 
     private IEnumerator TypeText(string text, int robberOrVictim)
     {
+
         string currentText = "";
 
         if (robberOrVictim == 0)
@@ -90,6 +94,9 @@ public class DialogController : MonoBehaviour
 
         foreach (char letter in text.ToCharArray())
         {
+            //se for a primeira letra, deixar maiuscula 
+
+            state = State.PLAYING;
             currentText += letter;
 
             if (robberOrVictim == 0)
@@ -101,8 +108,10 @@ public class DialogController : MonoBehaviour
                 victimDialogText.text = currentText;
             }
 
-            yield return new WaitForSeconds(0.04f);
+            yield return new WaitForSeconds(0.06f);
         }
+        yield return new WaitForSeconds(0.5f);
+        state = State.COMPLETED;
     }
 
 

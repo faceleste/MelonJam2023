@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a0180a569366345963136a9279a893, type: 3}
   m_Name: 7
   m_EditorClassIdentifier: 
-  labels: []
+  labels:
+  - text: " You\u2019re deranged. Huh. I guess that\u2019s to be expected."
+    nextScene: {fileID: 11400000, guid: 82a97c4a8b6fe534dacd987972f1136b, type: 2}
+    labelType: bad
+  - text: I have seen quite a lot of stuff related, yeah.
+    nextScene: {fileID: 11400000, guid: 82a97c4a8b6fe534dacd987972f1136b, type: 2}
+    labelType: neutral
+  - text: Only things I have ever read involve laws and economy.
+    nextScene: {fileID: 11400000, guid: 82a97c4a8b6fe534dacd987972f1136b, type: 2}
+    labelType: good

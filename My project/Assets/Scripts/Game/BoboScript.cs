@@ -100,7 +100,7 @@ public class BoboScript : MonoBehaviour
                 player.canWalk = true;
             }
 
-            if (cooldownView <= -2.5f)
+            if (cooldownView <= -1.5f)
             {
                 
                 simboloExclamacao.SetActive(false);

@@ -15,10 +15,10 @@ MonoBehaviour:
   labels:
   - text: Furry....
     nextScene: {fileID: 11400000, guid: 4d4a8c4af73bfb84e901e35bf3e921ef, type: 2}
-    labelType: good
+    labelType: bad
   - text: I like to draw people around me, my life.
     nextScene: {fileID: 11400000, guid: 4d4a8c4af73bfb84e901e35bf3e921ef, type: 2}
-    labelType: bad
+    labelType: good
   - text: I draw anime girls.
     nextScene: {fileID: 11400000, guid: 4d4a8c4af73bfb84e901e35bf3e921ef, type: 2}
-    labelType: good
+    labelType: neutral

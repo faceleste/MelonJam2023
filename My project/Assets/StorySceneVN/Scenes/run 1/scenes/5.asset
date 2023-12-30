@@ -12,5 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21460d747d7b3c45b636b0ea21bdfc5, type: 3}
   m_Name: 5
   m_EditorClassIdentifier: 
-  sentences: []
-  nextScene: {fileID: 0}
+  sentences:
+  - text: ': Oh, well. You should visit parents if you can. But I guess my father
+      is not worth the effort.'
+    speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
+    type: 
+  - text: I was wondering, do you like reading?
+    speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
+    type: 
+  nextScene: {fileID: 11400000, guid: 15624fc9556e2094c93942314327323f, type: 2}
