@@ -52,7 +52,7 @@ public class ChooseLabelController : MonoBehaviour, IPointerClickHandler, IPoint
 
         if (label.labelType == "good")
         {
-            slider.value -= 15;
+            slider.value -= 20;
             Debug.Log("Teste");
         }
 
@@ -77,7 +77,7 @@ public class ChooseLabelController : MonoBehaviour, IPointerClickHandler, IPoint
             {
                 slider.value = 100;
             }
-            slider.value += 55;
+            slider.value += 20;
             List<string> badSentences = new List<string>();
             badSentences.Add("Go screw yourself.");
             badSentences.Add("Are you out of your mind? Why would you say that?");
