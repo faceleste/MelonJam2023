@@ -10,9 +10,20 @@ public class DesconfiometroManager : MonoBehaviour
 
     public Slider slider;
     public GameObject backgroundOBJ;
+    public GameObject boboObj;
+    public GameObject saulObj;
     public GameObject faceOBJ;
 
     public PlayerMove player;
+    [Header("Pessoas")]
+    public Sprite sNormal;
+    public Sprite sTenso;
+    public Sprite sMedo;
+    public Sprite boboNormal;
+    public Sprite boboTenso;
+    public Sprite boboMedo;
+    public Sprite boboVirado;
+
     [Header("BG")]
     public Sprite muitoDesconfiado;
     public Sprite desconfiado;
@@ -82,6 +93,9 @@ public class DesconfiometroManager : MonoBehaviour
     {
         MudarCorSlider("red");
         backgroundOBJ.GetComponent<Image>().sprite = muitoDesconfiado;
+        boboObj.GetComponent<Image>().sprite = boboMedo;
+        saulObj.GetComponent<Image>().sprite =  sMedo;
+
         faceOBJ.GetComponent<Image>().sprite = faceDesconfianca;
         boboscript.timeToView = 1;
         //mudar cor do slider e do fill do slider
@@ -93,6 +107,9 @@ public class DesconfiometroManager : MonoBehaviour
     {
         MudarCorSlider("green");
         backgroundOBJ.GetComponent<Image>().sprite = confiando;
+        boboObj.GetComponent<Image>().sprite = boboNormal;
+        saulObj.GetComponent<Image>().sprite = sNormal;
+
         faceOBJ.GetComponent<Image>().sprite = faceConfianca;
         boboscript.timeToView = 15;
     }
@@ -102,6 +119,10 @@ public class DesconfiometroManager : MonoBehaviour
         MudarCorSlider("yellow");
         boboscript.timeToView = 5;
         backgroundOBJ.GetComponent<Image>().sprite = desconfiado;
+
+        boboObj.GetComponent<Image>().sprite = boboTenso;
+        saulObj.GetComponent<Image>().sprite = sTenso;
+
         faceOBJ.GetComponent<Image>().sprite = faceNeutral;
 
     }

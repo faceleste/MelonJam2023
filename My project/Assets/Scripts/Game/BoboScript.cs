@@ -74,6 +74,7 @@ public class BoboScript : MonoBehaviour
             }
             if (cooldownView <= 1.5f && cooldownView > 0)
             {
+                player.canWalk = false;
                 camera.SmoothFactor = 4;
                 camera.player = this.transform;
                 if (cooldownView <= 1f)
@@ -85,9 +86,11 @@ public class BoboScript : MonoBehaviour
             else if (cooldownView <= 0 && cooldownView > -1)
             {
                 camera.player = camera.playerAgain;
+                player.canWalk = true;
             }
             if (cooldownView <= -2.5f)
             {
+                
                 simboloExclamacao.SetActive(false);
                 srBobo.sprite = boboNormal;
                 srCharmoso.sprite = charmosoNormal;

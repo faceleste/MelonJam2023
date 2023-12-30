@@ -71,8 +71,17 @@ public class PlayerMove : MonoBehaviour
                 anim.SetBool("isWalking", true);
                 cooldownEspirro = timeToEspirrar;
             }
+            else
+            {
+                anim.SetBool("isWalking", false);
+                cooldownEspirro -= Time.deltaTime;
+                if(cooldownEspirro <= 0)
+                {
+                    anim.SetTrigger("isEspirrando");
+                    cooldownEspirro = timeToEspirrar;
+                }
+            }
         }
-        
         else
         {
             anim.SetBool("isWalking", false);

@@ -62,11 +62,11 @@ public class ChooseController : MonoBehaviour
         {
             if (labelIndex < labelCount / 2)
             { //top
-                return labelHeight * (labelCount / 2 - labelIndex) + 35;
+                return labelHeight * (labelCount / 2 - labelIndex) + 1;
             }
             else if (labelIndex > labelCount / 2)
             { //bot
-                return -1 * (labelHeight * (labelIndex - labelCount / 2)) - 35;
+                return -1 * (labelHeight * (labelIndex - labelCount / 2)) - 1;
             }
             else
             { // mid 
