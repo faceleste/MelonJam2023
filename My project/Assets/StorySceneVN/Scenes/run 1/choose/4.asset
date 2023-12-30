@@ -13,14 +13,12 @@ MonoBehaviour:
   m_Name: 4
   m_EditorClassIdentifier: 
   labels:
-  - text: "Interessante meu caro. Tenho uma vis\xE3o parecida de arte. Falando em
-      arte, voc\xEA viu essa tend\xEAncia de \"NFT\"?"
-    nextScene: {fileID: 11400000, guid: 480db46d533f97443978e9668234e908, type: 2}
+  - text: 'To be honest with you, no, not really. '
+    nextScene: {fileID: 11400000, guid: aa42a51450e855740a9483893857d623, type: 2}
     labelType: good
-  - text: I believe that art has a philosophical value, blablabla, Eduardo Nerd.
-    nextScene: {fileID: 11400000, guid: 480db46d533f97443978e9668234e908, type: 2}
+  - text: "I have a girl. She\u2019s dying of cancer. Poor kid."
+    nextScene: {fileID: 11400000, guid: aa42a51450e855740a9483893857d623, type: 2}
     labelType: bad
-  - text: What a complex description, I never imagined it from that point. Art for
-      me is everything, everything for me is art, art for me is everything.
-    nextScene: {fileID: 11400000, guid: 480db46d533f97443978e9668234e908, type: 2}
+  - text: 'Yeah, I have a boy and a girl. '
+    nextScene: {fileID: 11400000, guid: aa42a51450e855740a9483893857d623, type: 2}
     labelType: neutral
