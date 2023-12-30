@@ -7,7 +7,7 @@ public class ChooseController : MonoBehaviour
 {
     public ChooseLabelController label;
     public GameController gameController;
-    public Image background ; 
+    public Image background;
     private RectTransform rectTransform;
     private float labelHeight = -1;
 
@@ -44,7 +44,8 @@ public class ChooseController : MonoBehaviour
 
     public void PerformChoose(StoryScene scene)
     {
-            background.gameObject.SetActive(false);
+        background.gameObject.SetActive(false);
+
         gameController.PlayScene(scene);
 
     }
@@ -60,18 +61,7 @@ public class ChooseController : MonoBehaviour
         }
         else
         {
-            if (labelIndex < labelCount / 2)
-            { //top
-                return labelHeight * (labelCount / 2 - labelIndex) + 1;
-            }
-            else if (labelIndex > labelCount / 2)
-            { //bot
-                return -1 * (labelHeight * (labelIndex - labelCount / 2)) - 1;
-            }
-            else
-            { // mid 
-                return 0;
-            }
+            return (labelCount - labelIndex) * (labelHeight - 10);
         }
 
     }

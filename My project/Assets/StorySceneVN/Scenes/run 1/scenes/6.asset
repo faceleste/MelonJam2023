@@ -12,5 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21460d747d7b3c45b636b0ea21bdfc5, type: 3}
   m_Name: 6
   m_EditorClassIdentifier: 
-  sentences: []
-  nextScene: {fileID: 0}
+  sentences:
+  - text: I have been pretty invested in books that involve healing.
+    speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
+    type: 
+  - text: "Not that I\u2019m deeply traumatized or anything. I just like taking care
+      of myself. Do you have interest in that stuff?"
+    speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
+    type: 
+  nextScene: {fileID: 11400000, guid: daa9309124152d545851e4d0483d73c5, type: 2}
