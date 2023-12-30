@@ -5,7 +5,7 @@ using UnityEngine;
 public class CamMenu : MonoBehaviour
 {
     private Animator animCam; // for future animations
-    public Transform player;
+    
     public Transform player2;
     public Vector3 offset;
     [Range(0, 10)]
@@ -21,7 +21,7 @@ public class CamMenu : MonoBehaviour
     }
     void FixedUpdate()
     {
-        player.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
         positionAl = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Follow(); 
         
