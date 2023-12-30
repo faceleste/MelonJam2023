@@ -67,7 +67,7 @@ public class DesconfiometroManager : MonoBehaviour
             else
             {
                 Debug.Log("Olhou pq tá curioso");
-                slider.value += 20;
+                slider.value += 99;
             }
             boboscript.isViewPlayer = false;
         }
@@ -106,7 +106,7 @@ public class DesconfiometroManager : MonoBehaviour
         lastBobo = boboMedo;
 
         faceOBJ.GetComponent<Image>().sprite = faceDesconfianca;
-        boboscript.timeToView = 1;
+        boboscript.timeToView = 6;
         //mudar cor do slider e do fill do slider
         animSlide.SetBool("isTremendo", true);
 
@@ -125,14 +125,14 @@ public class DesconfiometroManager : MonoBehaviour
         lastBobo = boboNormal;
 
         faceOBJ.GetComponent<Image>().sprite = faceConfianca;
-        boboscript.timeToView = 15;
+        boboscript.timeToView = 20;
          animSlide.SetBool("isTremendo", false);
     }
 
     void MediaDesconfianca()
     {
         MudarCorSlider("yellow");
-        boboscript.timeToView = 5;
+        boboscript.timeToView = 12;
         backgroundOBJ.GetComponent<Image>().sprite = desconfiado;
 
         if(isVirado == false)
