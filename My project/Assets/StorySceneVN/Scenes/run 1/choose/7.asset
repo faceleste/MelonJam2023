@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: 7
   m_EditorClassIdentifier: 
   labels:
-  - text: " You\u2019re deranged. Huh. I guess that\u2019s to be expected."
+  - text: " You\u2019re deranged. Huh. "
     nextScene: {fileID: 11400000, guid: 82a97c4a8b6fe534dacd987972f1136b, type: 2}
     labelType: bad
-  - text: I have seen quite a lot of stuff related, yeah.
+  - text: I have seen quite a lot of stuff related
     nextScene: {fileID: 11400000, guid: 82a97c4a8b6fe534dacd987972f1136b, type: 2}
     labelType: neutral
   - text: Only things I have ever read involve laws and economy.

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 6
   m_EditorClassIdentifier: 
   labels:
-  - text: "Not really. I did buy some last month, they\u2019re just there."
+  - text: Not really
     nextScene: {fileID: 11400000, guid: fe71cb8b0ea0c964bbcbbcbf6740e83d, type: 2}
     labelType: neutral
-  - text: 'I have read a lot of books. Literature is really interesting. '
+  - text: 'I have read a lot of books. '
     nextScene: {fileID: 11400000, guid: fe71cb8b0ea0c964bbcbbcbf6740e83d, type: 2}
     labelType: good
-  - text: ' Books are shit. Why would I read when movies exist?'
+  - text: ' Books are shit.'
     nextScene: {fileID: 11400000, guid: fe71cb8b0ea0c964bbcbbcbf6740e83d, type: 2}
     labelType: bad

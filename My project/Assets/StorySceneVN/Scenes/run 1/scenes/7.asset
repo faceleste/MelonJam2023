@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: 7
   m_EditorClassIdentifier: 
   sentences:
-  - text: "Being direct here, I\u2019m pretty interested in philosophy too. Lately
-      I have been wondering more and more about how we relate to each other in conversations."
+  - text: "Being direct here, I\u2019m pretty interested in philosophy too."
+    speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
+    type: 
+  - text: ' Lately I have been wondering more and more about how we relate to each
+      other in conversations.'
     speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
     type: 
   - text: "Have you heard anything about philosophy? I could recommend you some books\u2026"

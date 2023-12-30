@@ -16,7 +16,7 @@ MonoBehaviour:
   - text: Both my parents died in a truck accident when I was little.
     nextScene: {fileID: 11400000, guid: eab7ecc4e1bb3be4a9d6e5eac9cfe732, type: 2}
     labelType: bad
-  - text: "Yeah they\u2019re both alive. I should visit them more often."
+  - text: "Yeah they\u2019re both alive."
     nextScene: {fileID: 11400000, guid: eab7ecc4e1bb3be4a9d6e5eac9cfe732, type: 2}
     labelType: neutral
   - text: "My mom is alive but I haven\u2019t seen her in years."

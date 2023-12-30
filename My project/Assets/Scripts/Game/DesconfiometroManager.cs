@@ -96,7 +96,7 @@ public class DesconfiometroManager : MonoBehaviour
     void AltaDesconfianca()
     {
         MudarCorSlider("red");
-        backgroundOBJ.GetComponent<Image>().sprite = muitoDesconfiado;
+    
         if(isVirado == false)
         {
             boboObj.GetComponent<Image>().sprite = boboMedo;
@@ -115,7 +115,7 @@ public class DesconfiometroManager : MonoBehaviour
     void BaixaDesconfianca()
     {
         MudarCorSlider("green");
-        backgroundOBJ.GetComponent<Image>().sprite = confiando;
+   
         if(isVirado == false)
         {
             boboObj.GetComponent<Image>().sprite = boboNormal;
@@ -133,7 +133,7 @@ public class DesconfiometroManager : MonoBehaviour
     {
         MudarCorSlider("yellow");
         boboscript.timeToView = 5;
-        backgroundOBJ.GetComponent<Image>().sprite = desconfiado;
+
 
         if(isVirado == false)
         {

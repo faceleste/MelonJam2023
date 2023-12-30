@@ -13,14 +13,12 @@ MonoBehaviour:
   m_Name: 8
   m_EditorClassIdentifier: 
   labels:
-  - text: "I have seen some documentaries about it. But I don\u2019t see the point
-      of it. That\u2019s really all."
+  - text: I have seen some documentaries about it.
     nextScene: {fileID: 11400000, guid: fb1ff76e0d0694f4da94f19a1cd3c846, type: 2}
     labelType: good
-  - text: "My best guess is Plato. Don\u2019t know anything beyond that, haha\u2026"
+  - text: 'My best guess is Plato. '
     nextScene: {fileID: 11400000, guid: fb1ff76e0d0694f4da94f19a1cd3c846, type: 2}
     labelType: bad
-  - text: "Well, I remember seeing stuff about it in school, but I can\u2019t remember
-      anything."
+  - text: Well, I remember seeing stuff about it in school
     nextScene: {fileID: 11400000, guid: fb1ff76e0d0694f4da94f19a1cd3c846, type: 2}
     labelType: neutral
