@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: 4
   m_EditorClassIdentifier: 
   labels:
-  - text: 'What is your favorite color? '
+  - text: 'To be honest with you, no, not really. '
     nextScene: {fileID: 11400000, guid: aa42a51450e855740a9483893857d623, type: 2}
     labelType: good
-  - text: What is your name?
+  - text: "I have a girl. She\u2019s dying of cancer. Poor kid."
     nextScene: {fileID: 11400000, guid: aa42a51450e855740a9483893857d623, type: 2}
-    labelType: neutral
-  - text: What is your age?
+    labelType: bad
+  - text: 'Yeah, I have a boy and a girl. '
     nextScene: {fileID: 11400000, guid: aa42a51450e855740a9483893857d623, type: 2}
     labelType: neutral

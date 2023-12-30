@@ -12,5 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21460d747d7b3c45b636b0ea21bdfc5, type: 3}
   m_Name: 4
   m_EditorClassIdentifier: 
-  sentences: []
-  nextScene: {fileID: 0}
+  sentences:
+  - text: "I get that. It\u2019s going to be ok tho. You seem like a decent human
+      being."
+    speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
+    type: 
+  - text: ' I appreciate it. Are your parents still alive?'
+    speaker: {fileID: 11400000, guid: 0240f07bec913a34d85160d755f31b5a, type: 2}
+    type: 
+  - text: ' My father is. He is a terrible human being. Abused my mother for years
+      and years for no end. I hope he rots in hell. '
+    speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
+    type: 
+  - text: ' And yours?'
+    speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
+    type: 
+  nextScene: {fileID: 11400000, guid: edf56873d029a334c8f4116104ba3cf7, type: 2}

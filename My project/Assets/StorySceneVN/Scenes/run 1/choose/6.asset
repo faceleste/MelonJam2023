@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a0180a569366345963136a9279a893, type: 3}
   m_Name: 6
   m_EditorClassIdentifier: 
-  labels: []
+  labels:
+  - text: "Not really. I did buy some last month, they\u2019re just there."
+    nextScene: {fileID: 11400000, guid: fe71cb8b0ea0c964bbcbbcbf6740e83d, type: 2}
+    labelType: neutral
+  - text: 'I have read a lot of books. Literature is really interesting. '
+    nextScene: {fileID: 11400000, guid: fe71cb8b0ea0c964bbcbbcbf6740e83d, type: 2}
+    labelType: good
+  - text: ' Books are shit. Why would I read when movies exist?'
+    nextScene: {fileID: 11400000, guid: fe71cb8b0ea0c964bbcbbcbf6740e83d, type: 2}
+    labelType: bad

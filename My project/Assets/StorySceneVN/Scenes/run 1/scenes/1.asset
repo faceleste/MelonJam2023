@@ -13,12 +13,18 @@ MonoBehaviour:
   m_Name: 1
   m_EditorClassIdentifier: 
   sentences:
-  - text: I'm a member of the AAAAA; Authentic and Ambitious Assalariated Artists
-      Association. We
+  - text: Ah, I was waiting for the folks from AAAAA
     speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
     type: 
-  - text: ' paint for the art, not for the money. Money destroys all ambition and
-      turns it into desire'
+  - text: AAAAA?
+    speaker: {fileID: 11400000, guid: 0240f07bec913a34d85160d755f31b5a, type: 2}
+    type: 
+  - text: 'I''m a member of the AAAAA; Authentic and Ambitious Assalariated Artists
+      Association. '
+    speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
+    type: 
+  - text: We paint for the art, not for the money. Money destroys all ambition and
+      turns it into desire
     speaker: {fileID: 11400000, guid: 1b0dbf8a39ff2234ea204dda37d4b3fe, type: 2}
     type: 
   - text: What do you do for a living?

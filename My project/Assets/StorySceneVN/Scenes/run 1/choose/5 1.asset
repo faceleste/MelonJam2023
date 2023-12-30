@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a0180a569366345963136a9279a893, type: 3}
   m_Name: 5 1
   m_EditorClassIdentifier: 
-  labels: []
+  labels:
+  - text: Both my parents died in a truck accident when I was little.
+    nextScene: {fileID: 11400000, guid: eab7ecc4e1bb3be4a9d6e5eac9cfe732, type: 2}
+    labelType: bad
+  - text: "Yeah they\u2019re both alive. I should visit them more often."
+    nextScene: {fileID: 11400000, guid: eab7ecc4e1bb3be4a9d6e5eac9cfe732, type: 2}
+    labelType: neutral
+  - text: "My mom is alive but I haven\u2019t seen her in years."
+    nextScene: {fileID: 11400000, guid: eab7ecc4e1bb3be4a9d6e5eac9cfe732, type: 2}
+    labelType: good

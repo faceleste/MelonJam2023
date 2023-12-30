@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    void Update()
+    async void Update()
     {
 
         tempoDecorrido += Time.deltaTime;
@@ -45,9 +45,6 @@ public class GameController : MonoBehaviour
                 }
                 else
                 {
-                    int qtdWords = dialog.GetNextSentencesWords();
-                    intervalo = qtdWords * 0.061f;
-                    Debug.Log("Quantidade de palavras: " + qtdWords + " Intervalo: " + intervalo);
                     dialog.PlayNextSentence();
                 }
             }
@@ -56,6 +53,7 @@ public class GameController : MonoBehaviour
 
     public void PlayScene(GameScene scene)
     {
+        state = State.IDLE; 
         StartCoroutine(SwitchScene(scene));
     }
 
@@ -64,12 +62,12 @@ public class GameController : MonoBehaviour
         state = State.ANIMATE;
         currentScene = scene;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         if (scene is StoryScene)
         {
             chooseController.DestroyLabels();
             StoryScene storyScene = scene as StoryScene;
-            yield return new WaitForSeconds(0.5f);
+            
             dialog.ClearText();
 
             yield return new WaitForSeconds(0.5f);
@@ -82,10 +80,10 @@ public class GameController : MonoBehaviour
             chooseController.SetupChoose(scene as ChooseScene);
         }
 
-       
+
         if (scene is StoryScene)
         {
-            StoryScene storySceneInstance = scene as StoryScene;  
+            StoryScene storySceneInstance = scene as StoryScene;
             if (storySceneInstance.sentences[0].type == "created")
             {
                 storySceneInstance.sentences.RemoveAt(0);
