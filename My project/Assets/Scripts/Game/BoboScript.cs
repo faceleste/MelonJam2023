@@ -64,6 +64,14 @@ public class BoboScript : MonoBehaviour
 
         if (seeLong == true)
         {
+            if(cooldownView <= 2.5f && cooldownView > 1.5f)
+            {
+                simboloExclamacao.SetActive(true);
+            }
+            else
+            {
+                simboloExclamacao.SetActive(false);
+            }
             if (cooldownView <= 1.5f && cooldownView > 0)
             {
                 camera.SmoothFactor = 4;

@@ -16,7 +16,7 @@ public class ChooseLabelController : MonoBehaviour, IPointerClickHandler, IPoint
     void Awake()
     {
 
-
+        
         textMesh = GetComponent<TextMeshProUGUI>();
         textMesh.color = defaultColor;
     }
@@ -53,8 +53,17 @@ public class ChooseLabelController : MonoBehaviour, IPointerClickHandler, IPoint
         if (label.labelType == "good")
         {
             slider.value -= 15;
-            Debug.Log(desconfiometro.desconfiometro);
-            Debug.Log("Teste");
+            //Debug.Log(desconfiometro.desconfiometro);
+            //Debug.Log("Teste");
+            List<string> neutralSentences = new List<string>();
+            neutralSentences.Add("I don't know what to say.");
+            neutralSentences.Add("...");
+            neutralSentences.Add("?");
+            neutralSentences.Add("Ok...?");
+
+            int randomNumber = Random.Range(1, neutralSentences.Count);
+            string randomQuote = neutralSentences[randomNumber];
+            scene.sentences.Insert(0, new StoryScene.Sentence(randomQuote, new Speaker("Victim", Color.black)));
         }
 
         if (label.labelType == "neutral")

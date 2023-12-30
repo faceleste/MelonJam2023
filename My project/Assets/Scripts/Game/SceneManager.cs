@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SceneManager : MonoBehaviour
 {
     public Animator anim;
+    public PlayerMove player;
     public bool isP1;
     public Image imgP1;
     public bool isP2;
@@ -33,6 +34,8 @@ public class SceneManager : MonoBehaviour
                 imgP2.enabled = false;
                 isP1 = false;
                 isP2 = true;
+                player.canWalk = false;
+                player.anim.SetBool("isWalking", false);
             }
             else if(isP2 == true)
             {
@@ -41,6 +44,7 @@ public class SceneManager : MonoBehaviour
                 imgP2.enabled = true;
                 isP1 = true;
                 isP2 = false;
+                player.canWalk = true;
             }
             
         }
