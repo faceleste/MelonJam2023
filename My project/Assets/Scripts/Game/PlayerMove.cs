@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -8,9 +9,10 @@ public class PlayerMove : MonoBehaviour
     public float speed;
 
     public LayerMask objLayer;
+    public LayerMask winLayer;
     public bool isPlayerInvisible;
     public float rangeObj;
-
+    public bool isplayerWin;
     public Animator anim;
     public SpriteRenderer sr;
 
@@ -31,7 +33,17 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         isPlayerInvisible = Physics2D.OverlapCircle(this.transform.position, rangeObj, objLayer);
-        
+        isplayerWin = Physics2D.OverlapCircle(this.transform.position, rangeObj, winLayer);
+
+        if(isplayerWin)
+        {
+            if(canWin == true)
+            {
+                 UnityEngine.SceneManagement.SceneManager.LoadScene("winGame");
+                 Debug.Log("FOI");
+            }
+        }
+
         if(isPlayerInvisible)
         {
             sr.flipX = false;
@@ -112,13 +124,15 @@ public class PlayerMove : MonoBehaviour
         canWalk = true;
     }
 
-    void OnTriggerEnter2D(Collision2D collision) 
+    void OnColliderEnter2D(Collider2D collision) 
     { 
+        Debug.Log("FOI");
         if (collision.gameObject.CompareTag("Porta")) 
         { 
             if(canWin == true)
             {
-                 // VENCEU
+                 UnityEngine.SceneManagement.SceneManager.LoadScene("WinGame");
+                 Debug.Log("FOI");
             }
           
         } 
