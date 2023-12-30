@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class DesconfiometroManager : MonoBehaviour
 {
 
+    public bool isVirado = false;
     public Slider slider;
     public GameObject backgroundOBJ;
     public GameObject boboObj;
@@ -24,6 +25,7 @@ public class DesconfiometroManager : MonoBehaviour
     public Sprite boboMedo;
     public Sprite boboVirado;
 
+    public Sprite lastBobo;
     [Header("BG")]
     public Sprite muitoDesconfiado;
     public Sprite desconfiado;
@@ -34,11 +36,13 @@ public class DesconfiometroManager : MonoBehaviour
     public Sprite faceDesconfianca;
     [Header("Scripts")]
     public BoboScript boboscript;
+    public Animator animSlide;
 
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("DrenarConfianca", 0f, 1f);
+        lastBobo = boboNormal;
     }
 
     // Update is called once per frame
@@ -93,13 +97,18 @@ public class DesconfiometroManager : MonoBehaviour
     {
         MudarCorSlider("red");
         backgroundOBJ.GetComponent<Image>().sprite = muitoDesconfiado;
-        boboObj.GetComponent<Image>().sprite = boboMedo;
+        if(isVirado == false)
+        {
+            boboObj.GetComponent<Image>().sprite = boboMedo;
+        }
+        
         saulObj.GetComponent<Image>().sprite =  sMedo;
+        lastBobo = boboMedo;
 
         faceOBJ.GetComponent<Image>().sprite = faceDesconfianca;
         boboscript.timeToView = 1;
         //mudar cor do slider e do fill do slider
-
+        animSlide.SetBool("isTremendo", true);
 
     }
 
@@ -107,11 +116,17 @@ public class DesconfiometroManager : MonoBehaviour
     {
         MudarCorSlider("green");
         backgroundOBJ.GetComponent<Image>().sprite = confiando;
-        boboObj.GetComponent<Image>().sprite = boboNormal;
+        if(isVirado == false)
+        {
+            boboObj.GetComponent<Image>().sprite = boboNormal;
+        }
+        
         saulObj.GetComponent<Image>().sprite = sNormal;
+        lastBobo = boboNormal;
 
         faceOBJ.GetComponent<Image>().sprite = faceConfianca;
         boboscript.timeToView = 15;
+         animSlide.SetBool("isTremendo", false);
     }
 
     void MediaDesconfianca()
@@ -120,10 +135,16 @@ public class DesconfiometroManager : MonoBehaviour
         boboscript.timeToView = 5;
         backgroundOBJ.GetComponent<Image>().sprite = desconfiado;
 
-        boboObj.GetComponent<Image>().sprite = boboTenso;
+        if(isVirado == false)
+        {
+            boboObj.GetComponent<Image>().sprite = boboTenso;
+        }
+        
         saulObj.GetComponent<Image>().sprite = sTenso;
+        lastBobo = boboTenso;
 
         faceOBJ.GetComponent<Image>().sprite = faceNeutral;
+        animSlide.SetBool("isTremendo", false);
 
     }
 
@@ -159,6 +180,16 @@ public class DesconfiometroManager : MonoBehaviour
     void GameOver()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+    }
+
+    public void changeSprite()
+    {
+        boboObj.GetComponent<Image>().sprite = lastBobo;
+    }
+
+    public void changeSpriteVirado()
+    {
+        boboObj.GetComponent<Image>().sprite = boboVirado;
     }
 }
 

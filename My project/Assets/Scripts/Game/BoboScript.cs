@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BoboScript : MonoBehaviour
 {
@@ -37,7 +38,10 @@ public class BoboScript : MonoBehaviour
     public bool seeNext;
     
     public GameObject simboloExclamacao;
+    public GameObject simboloExclamacao2;
     public float rangeSeeNext;
+
+    public DesconfiometroManager desconfiometro;
 
     // Start is called before the first frame update
     void Start()
@@ -67,13 +71,20 @@ public class BoboScript : MonoBehaviour
             if(cooldownView <= 2.5f && cooldownView > 1.5f)
             {
                 simboloExclamacao.SetActive(true);
+                simboloExclamacao2.SetActive(true);
+                //desconfiometro.boboObj.GetComponent<Image>().sprite = desconfiometro.boboVirado; 
             }
             else
             {
-                simboloExclamacao.SetActive(false);
+                //simboloExclamacao.SetActive(false);
+                //simboloExclamacao2.SetActive(false);
+                //desconfiometro.boboObj.GetComponent<Image>().sprite = desconfiometro.lastBobo; 
             }
             if (cooldownView <= 1.5f && cooldownView > 0)
             {
+                 desconfiometro.isVirado = true;
+                simboloExclamacao2.SetActive(false);
+                desconfiometro.changeSpriteVirado();
                 player.canWalk = false;
                 camera.SmoothFactor = 4;
                 camera.player = this.transform;
@@ -88,16 +99,19 @@ public class BoboScript : MonoBehaviour
                 camera.player = camera.playerAgain;
                 player.canWalk = true;
             }
+
             if (cooldownView <= -2.5f)
             {
                 
                 simboloExclamacao.SetActive(false);
+                desconfiometro.isVirado = false;
                 srBobo.sprite = boboNormal;
                 srCharmoso.sprite = charmosoNormal;
                 cooldownView = timeToView;
                 camera.SmoothFactor = 2;
                 Debug.Log("Perdeu bobo");
                 isViewPlayer = true;
+                desconfiometro.changeSprite();
                 //GAMEOVER
             }
         }
